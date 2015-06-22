@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>609</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Weibo Prediction</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icons/main.png</normaloff>icons/main.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="result_groupbox">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>375</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>Result</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QTextBrowser" name="result_text">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>3000</width>
+             <height>1500</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="input_groupbox">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>180</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>Weibo Input</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="1" column="1">
+          <widget class="QDateTimeEdit" name="date_time_edit">
+           <property name="displayFormat">
+            <string>yyyy.M.d HH:mm</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="time_label">
+           <property name="text">
+            <string>Time (24-Hour)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="8">
+          <widget class="QTextEdit" name="weibo_input_text">
+           <property name="maximumSize">
+            <size>
+             <width>3000</width>
+             <height>80</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="foward_label">
+           <property name="text">
+            <string>Forward (Yes=1, No=0)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QSpinBox" name="forward_spinbox">
+           <property name="toolTip">
+            <string>Suicide or not</string>
+           </property>
+           <property name="maximum">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QDockWidget" name="dockWidget">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>550</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>1200</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="dockWidgetContents">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>1. Set Training Weibo Number</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QSlider" name="horizontal_slider">
+             <property name="toolTip">
+              <string>Selected Weibo number</string>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>160</number>
+             </property>
+             <property name="singleStep">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="invertedAppearance">
+              <bool>false</bool>
+             </property>
+             <property name="invertedControls">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="selected_spinbox">
+             <property name="toolTip">
+              <string>Selected Weibo number</string>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>160</number>
+             </property>
+             <property name="singleStep">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+          <zorder>selected_spinbox</zorder>
+          <zorder>horizontal_slider</zorder>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="title">
+           <string>2. Clik to Train</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QPushButton" name="train_button">
+             <property name="font">
+              <font>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Train</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>3. Click to Predict</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QPushButton" name="predict_file_button">
+             <property name="font">
+              <font>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Predict from file</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="predict_input_button">
+             <property name="font">
+              <font>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Predict from input</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionTrain"/>
+    <addaction name="actionPredict"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+  </widget>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/exit.png</normaloff>icons/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="actionPredict">
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/predict.png</normaloff>icons/predict.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Predict</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionTrain">
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/train.png</normaloff>icons/train.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Train</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/about.png</normaloff>icons/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
