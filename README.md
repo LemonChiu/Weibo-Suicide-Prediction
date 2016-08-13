@@ -1,8 +1,9 @@
 # Weibo-Suicide-Prediction
 This utility which based on jieba, Fast Artificial Neural Network and PyQt4 predicts suicide risk from Chinese Weibo.
-<img src="https://raw.githubusercontent.com/LemonChiu/Weibo-Suicide-Prediction/master/screenshots/predict-file.png" align="left" width="800">
 
-### Dependency 
+![Interface screenshot](https://raw.githubusercontent.com/LemonChiu/Weibo-Suicide-Prediction/master/screenshots/predict-file.png)
+
+### Dependency
 + [jieba](https://github.com/fxsjy/jieba)
 + [Python FANN](https://github.com/FutureLinkCorporation/fann2)
 + [PyQt4](http://www.riverbankcomputing.co.uk/software/pyqt/download/)
